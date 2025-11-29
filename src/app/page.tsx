@@ -49,7 +49,7 @@ export default function Home() {
           {/* Card 2 */}
           <div className="card-feature text-center">
             <h3 className="text-cyan-400 text-xl sm:text-2xl font-bold mb-4">
-              02 → Stake &amp; Rank Up
+              02 → Stake & Rank Up
             </h3>
             <p className="text-gray-300">
               Disciple → Seer → Oracle → Archprophet
@@ -61,7 +61,7 @@ export default function Home() {
           {/* Card 3 */}
           <div className="card-feature text-center">
             <h3 className="text-cyan-400 text-xl sm:text-2xl font-bold mb-4">
-              03 → Play &amp; Earn Forever
+              03 → Play & Earn Forever
             </h3>
             <p className="text-gray-300">
               Submit memes → Canonized NFTs
@@ -100,7 +100,7 @@ export default function Home() {
             href="/mint"
             className="text-cyan-400 hover:text-cyan-300 transition-colors"
           >
-            Submit &amp; Mint
+            Submit & Mint
           </Link>
           <Link
             href="/dashboard"

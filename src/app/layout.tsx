@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Orbitron } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { WalletConnect } from "@/components/wallet-connect";
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: "900",
+  variable: "--font-orbitron",
+});
 
 export const metadata: Metadata = {
   title: "Digital Prophets | Mint Truth → Get Rich",
@@ -16,13 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={orbitron.variable}>
       <body className="bg-black text-white">
         <Providers>
           <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800 py-4 px-4 sm:px-6 flex items-center justify-between">

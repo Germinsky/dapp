@@ -11,7 +11,7 @@
 }
 
 .hero-title {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-orbitron), "Orbitron", sans-serif;
   font-weight: 900;
   letter-spacing: 0.05em;
   background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
@@ -22,7 +22,7 @@
 }
 
 .section-title {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-orbitron), "Orbitron", sans-serif;
   color: #00ffff;
   text-shadow: 0 0 30px #00ffff;
 }
