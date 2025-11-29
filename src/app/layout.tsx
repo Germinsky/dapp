@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Orbitron } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { WalletConnect } from "@/components/wallet-connect";
 
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: "900",
+  variable: "--font-orbitron",
+});
+
 export const metadata: Metadata = {
-  title: "Digital Prophets",
-  description: "Gamified truth verification — submit memes, vote, mint NFTs on Base",
+  title: "Digital Prophets | Mint Truth → Get Rich",
+  description:
+    "Gamified truth verification — submit memes, vote as a DAO, and mint verified memes as NFTs on Base",
 };
 
 export default function RootLayout({
@@ -14,27 +23,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={orbitron.variable}>
+      <body className="bg-black text-white">
         <Providers>
-          <header className="w-full border-b py-4 px-6 flex items-center justify-between">
-            <div className="text-lg font-semibold">Digital Prophets</div>
+          <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800 py-4 px-4 sm:px-6 flex items-center justify-between">
+            <Link
+              href="/"
+              className="text-lg font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              Digital Prophets
+            </Link>
             <nav>
-              <ul className="flex items-center gap-4">
-                <li>
-                  <a href="/" className="text-sm text-gray-700">
+              <ul className="flex items-center gap-3 sm:gap-6">
+                <li className="hidden sm:block">
+                  <Link
+                    href="/"
+                    className="text-sm text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/mint" className="text-sm text-gray-700">
+                  <Link
+                    href="/mint"
+                    className="text-sm text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
                     Mint
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/dashboard" className="text-sm text-gray-700">
+                  <Link
+                    href="/dashboard"
+                    className="text-sm text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
                     Dashboard
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <WalletConnect />
@@ -42,7 +65,7 @@ export default function RootLayout({
               </ul>
             </nav>
           </header>
-          <main className="px-6 py-8">{children}</main>
+          <main className="pt-16">{children}</main>
         </Providers>
       </body>
     </html>

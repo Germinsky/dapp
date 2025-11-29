@@ -1,1 +1,67 @@
 @import "tailwindcss";
+
+/* Custom landing page styles */
+@keyframes neon {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.4);
+  }
+}
+
+.hero-title {
+  font-family: var(--font-orbitron), "Orbitron", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: neon 3s infinite alternate;
+}
+
+.section-title {
+  font-family: var(--font-orbitron), "Orbitron", sans-serif;
+  color: #00ffff;
+  text-shadow: 0 0 30px #00ffff;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #000;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border-radius: 60px;
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 50px rgba(255, 0, 255, 0.6);
+}
+
+.card-feature {
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 1.25rem;
+  background: transparent;
+  transition: all 0.4s;
+}
+
+.card-feature:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  transform: translateY(-8px);
+}
+
+@media (max-width: 640px) {
+  .btn-primary {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
